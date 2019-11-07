@@ -1,0 +1,5 @@
+
+<button class="tomato-button {{type === ('change')? 'change':'default'}} {{size === 'mini' && 'mini'}}">{{text}}</button>
+<!-- 如果传入的type值为change，那么被调用的该组件拥有change样式名，size同义
+这里传入了三个属性，其分别在调用该组件的页面中已经定义了（例如在home页面中传入的是type=default，size=mini，text=创建任务） -->
+<!-- {{type === 'change' && 'change'}} -->

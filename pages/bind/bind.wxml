@@ -1,0 +1,12 @@
+<view class="binding">
+  <view class="title" wx:if="{{isbind}}">绑定PC账号</view>
+  <view class="title" wx:if="{{!isbind}}">注册PC账号</view>
+  <view class="input-wrapper">
+    <input bindinput="watchAccount" placeholder="账号" value="{{account}}"></input>
+    <input bindinput="watchPassword" placeholder="密码" value="{{passowrd}}"></input>
+  </view>
+  <t-button text="绑定" type="change" size="mini" wx:if="{{isbind}}" bindtap='submit'></t-button>
+  <t-button text="注册" type="change" size="mini" wx:if="{{!isbind}}" bindtap='submit'></t-button>
+  <view class="tips" wx:if="{{isbind}}" bindtap="gotosignup">没有PC账号，立即注册</view>
+  <image src="../../images/tomato-bg.png" class="bg"></image>
+</view>

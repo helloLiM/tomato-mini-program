@@ -1,0 +1,12 @@
+<view class="container">
+  <text>距离结束还有</text>
+  <t-clock class="clock" text="{{time}}"></t-clock>
+  <view class="stop" wx:if="{{!abandonVisible}}" >
+    <t-button type="change" size="mini" bindtap="methods" text="暂停" bindtap="clearTimer" wx:if="{{timeStatus === 'start'}}"></t-button>
+    <t-button type="change" size="mini" text="开始" bindtap="timepiece" wx:else></t-button>
+  </view>
+  <view class="abandon" wx:if="{{!abandonVisible}}"><t-button type="default" size="mini" text="放弃" bindtap="showConfirm"></t-button></view>
+  <view class="again" wx:if="{{abandonVisible}}" bindtap="againTimer"><t-button type="change" size="mini" text="再来一组" visible="visibleButton"></t-button></view> 
+  <t-confirm visible="{{confirmVisible}}" bindconfirm="confirmAbandon" bindcancel="cancelConfirm" placeholder="放弃理由"></t-confirm>
+  <t-confirm visible="{{accomplishVisible}}" bindconfirm="confirmFinished" bindcancel="finishedConfirm" placeholder="你完成了什么"></t-confirm>
+</view>
